@@ -40,3 +40,76 @@ a {
     color-scheme: dark;
   }
 }
+
+
+
+
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.content h1 {
+  font-size: 4rem;
+  /*margin-left: 5rem;*/
+}
+
+.content p {
+  font-size: 1.5rem;
+  /*margin-left: 5rem;*/
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.glow-button {
+  margin-top: 5rem;
+  font-size: 1.5rem;
+  padding: 12px 24px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0); /* DodgerBlue */
+  border: 10px groove #22acff;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 20px rgb(137, 221, 255);
+  transition: all 0.3s ease-in-out;
+}
+
+.glow-button:hover {
+  background-color:#ffff;
+  color:rgba(30, 144, 255, 0.8);
+  box-shadow: 0 0 30px rgba(30, 144, 255, 0.8), 0 0 60px rgba(30, 144, 255, 0.6);
+}
+
+.glow-button:active {
+  transform: scale(0.98);
+}
+
+/* Glowing animation */
+.glow-button {
+  animation: glow-animation 1.5s infinite alternate;
+}
+
+@keyframes glow-animation {
+  from {
+    box-shadow: 0 0 20px rgb(242, 248, 255), 0 0 40px rgba(30, 144, 255, 0.98);
+  }
+  to {
+    box-shadow: 0 0 30px rgb(30, 144, 255), 0 0 60px rgba(30, 144, 255, 0.6);
+  }
+}
