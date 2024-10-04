@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>JWST Cosmic Exploration</title>
+                <title>JWST Cosmic and Exploration</title>
                 <meta name="description" content="Explore the universe with the James Webb Space Telescope"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
