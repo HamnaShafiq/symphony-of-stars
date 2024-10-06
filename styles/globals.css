@@ -67,13 +67,14 @@ main {
 
 .background-video {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
   object-fit: cover;
-  filter: brightness(60%);
+  transform: translate(-50%, -50%);
+  /*filter: brightness(60%);*/
 }
 
 .glow-button {
@@ -112,4 +113,11 @@ main {
   to {
     box-shadow: 0 0 30px rgb(30, 144, 255), 0 0 60px rgba(30, 144, 255, 0.6);
   }
+}
+
+canvas {
+  position: absolute; /* Ensure it's positioned correctly */
+  top: 0;
+  left: 0;
+  z-index: 1; /* Higher than the background video */
 }

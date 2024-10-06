@@ -1,6 +1,10 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import Navbar from "./NavBar";
 
-const BackgroundMedia = () => {
+const BackgroundMedia = ({ src, onEnded }) => {
+    const videoRef = useRef(null);
+    const [isMuted, setIsMuted] = useState(true);
+
     const audioRef = useRef(null);
 
     useEffect(() => {
@@ -9,17 +13,41 @@ const BackgroundMedia = () => {
         }
     }, []);
 
+
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.play();
+        }
+    }, []);
+
+    const toggleMute = () => {
+        if (videoRef.current) {
+            videoRef.current.muted = !isMuted;
+            setIsMuted(!isMuted);
+        }
+    };
+
     return (
         <>
-            <video className="background-video" autoPlay loop muted>
-                <source src="/videos/1st.mp4" type="video/mp4" />
+            <Navbar />
+            <video
+                className="background-video"
+                autoPlay
+                muted={isMuted}  // Mute if isMuted is true
+                ref={videoRef}   // Reference to video element
+                onEnded={onEnded}  // Trigger onEnded prop when video ends
+            >
+                <source src={src} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-
+            <button onClick={toggleMute}>
+                {isMuted ? "Unmute" : "Mute"}
+            </button>
             {/*<audio ref={audioRef} loop autoPlay>*/}
-            {/*    <source src="/audios/1st.m4a" type="audio/mpeg" />*/}
+            {/*    <source src="/audios/1st.m4a" type="audio/mpeg"/>*/}
             {/*    Your browser does not support the audio element.*/}
             {/*</audio>*/}
+
         </>
     );
 };
