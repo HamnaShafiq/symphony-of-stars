@@ -19,6 +19,9 @@ const Navbar = () => {
             <ListItem button component={Link} href="/" passHref>
                 <ListItemText primary="Home" />
             </ListItem>
+            <ListItem button component={Link} href="/buttons" passHref>
+                <ListItemText primary="all options" />
+            </ListItem>
             <ListItem button component={Link} href="/jwst-info" passHref>
                 <ListItemText primary="JWST Information" />
             </ListItem>
@@ -58,6 +61,9 @@ const Navbar = () => {
                     <>
                         <Link href="/" passHref>
                             <Button color="inherit">Home</Button>
+                        </Link>
+                        <Link href="/buttons" passHref>
+                            <Button color="inherit">all options</Button>
                         </Link>
                         <Link href="/jwst-video" passHref>
                             <Button color="inherit">JWST video</Button>

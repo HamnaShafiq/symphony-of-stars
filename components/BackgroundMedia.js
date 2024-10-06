@@ -31,6 +31,7 @@ const BackgroundMedia = ({src, onEnded}) => {
             <video
                 className="background-video"
                 autoPlay
+                controls
                 // muted={isMuted}
                 ref={videoRef}
                 onEnded={onEnded}
