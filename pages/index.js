@@ -42,7 +42,7 @@ export default function Home() {
                 )}
                 {discover && !videoEnded && (
                     <BackgroundMedia
-                        src="/videos/ex.mp4"
+                        src="/videos/intro4th.mp4"
                         onEnded={() => {
                             console.log('Video ended');
                             setDiscover(false);

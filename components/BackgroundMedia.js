@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Navbar from "./NavBar";
 
 const BackgroundMedia = ({ src, onEnded }) => {
     const videoRef = useRef(null);
@@ -29,7 +28,6 @@ const BackgroundMedia = ({ src, onEnded }) => {
 
     return (
         <>
-            <Navbar />
             <video
                 className="background-video"
                 autoPlay
@@ -40,7 +38,7 @@ const BackgroundMedia = ({ src, onEnded }) => {
                 <source src={src} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-            <button onClick={toggleMute}>
+            <button onClick={toggleMute} className="glow-button">
                 {isMuted ? "Unmute" : "Mute"}
             </button>
             {/*<audio ref={audioRef} loop autoPlay>*/}
