@@ -8,7 +8,7 @@ import { useMediaQuery } from '@mui/material';
 
 const Navbar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const isMobile = useMediaQuery('(max-width:600px)'); // Change breakpoint as needed
+    const isMobile = useMediaQuery('(max-width:600px)');
 
     const toggleDrawer = (open) => () => {
         setDrawerOpen(open);
@@ -19,14 +19,17 @@ const Navbar = () => {
             <ListItem button component={Link} href="/" passHref>
                 <ListItemText primary="Home" />
             </ListItem>
-            <ListItem button component={Link} href="/Galaxy" passHref>
-                <ListItemText primary="Galaxy Simulation" />
+            <ListItem button component={Link} href="/jwst-info" passHref>
+                <ListItemText primary="JWST Information" />
             </ListItem>
-            <ListItem button component={Link} href="/SpaceModel" passHref>
-                <ListItemText primary="Solar System" />
+            <ListItem button component={Link} href="/jwst-video" passHref>
+                <ListItemText primary="JWST video" />
             </ListItem>
-            <ListItem button component={Link} href="/JWSTImages" passHref>
+            <ListItem button component={Link} href="/jwst-images" passHref>
                 <ListItemText primary="JWST Images" />
+            </ListItem>
+            <ListItem button component={Link} href="/solar-system" passHref>
+                <ListItemText primary="Solar System" />
             </ListItem>
         </List>
     );
@@ -56,14 +59,14 @@ const Navbar = () => {
                         <Link href="/" passHref>
                             <Button color="inherit">Home</Button>
                         </Link>
-                        <Link href="/Galaxy" passHref>
-                            <Button color="inherit">Galaxy Simulation</Button>
+                        <Link href="/jwst-video" passHref>
+                            <Button color="inherit">JWST video</Button>
                         </Link>
-                        <Link href="/SpaceModel" passHref>
-                            <Button color="inherit">Solar System</Button>
-                        </Link>
-                        <Link href="/JWSTImages" passHref>
+                        <Link href="/jwst-info" passHref>
                             <Button color="inherit">JWST Images</Button>
+                        </Link>
+                        <Link href="/solar-system" passHref>
+                            <Button color="inherit">Solar System</Button>
                         </Link>
                     </>
                 )}
