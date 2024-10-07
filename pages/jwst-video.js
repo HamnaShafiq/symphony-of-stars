@@ -3,6 +3,8 @@ import BackgroundMedia from "../components/BackgroundMedia";
 import Head from "next/head";
 import Navbar from "../components/NavBar";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const JwstVideo = () => {
     return (
         <>
@@ -12,7 +14,7 @@ const JwstVideo = () => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <Navbar/>
-            <BackgroundMedia src="/videos/intro4th.mp4"/>
+            <BackgroundMedia src={`{basePath}/videos/intro4th.mp4`}/>
         </>
     );
 };
