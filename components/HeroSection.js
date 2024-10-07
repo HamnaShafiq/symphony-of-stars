@@ -4,6 +4,9 @@ import {Container, Typography} from '@mui/material';
 import Navbar from "./NavBar";
 import {useRouter} from 'next/router';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
+
 export default function HeroSection({setShowJWST}) {
     const router = useRouter();
 
@@ -19,7 +22,7 @@ export default function HeroSection({setShowJWST}) {
                 <meta name="description" content="Explore the universe with the James Webb Space Telescope"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <BackgroundMedia src={"/videos/1st.mp4"}/>
+            <BackgroundMedia src={`{basePath}/videos/1st.mp4`}/>
 
             <Container
                 maxWidth="lg"
