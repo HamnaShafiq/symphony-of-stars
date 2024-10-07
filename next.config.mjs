@@ -1,12 +1,12 @@
-/** @type {import('next').NextConfig} */
+// next.config.mjs
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
-  basePath: '/symphony-of-stars',
-  assetPrefix: '/symphony-of-stars/', // Add your repo name here
+  basePath: '/symphony-of-stars', // Repo name for GitHub Pages
+  assetPrefix: '/symphony-of-stars/', // Static assets prefix
   images: {
-    unoptimized: true // Disable image optimization for static export
-  }
+    unoptimized: true, // Disable image optimization for GitHub Pages
+  },
+  output: 'export', // Export static files
 };
 
 export default nextConfig;
